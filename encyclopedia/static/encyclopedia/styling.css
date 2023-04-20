@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    background-color: white;
+    border-bottom: 1px solid black;
+    overflow-x: hidden;
+}
+
+code {
+    white-space: pre;
+}
+
+h1 {
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+textarea {
+    height: 55vh;
+    width: 80%;
+}
+
+.main {
+    padding: 10px;
+}
+
+.search {
+    width: 100%;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.sidebar {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+@media (min-width: 767.001px) {
+    .sidebar {
+        height: 100vh;
+    }
+    input.search {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .sidebar {
+        height: 45vh;
+    }
+    .row {
+        margin-left: 5px;
+    }
+}
+
+.sidebar h2 {
+    margin-top: 5px;
+    flex: 0 0 auto;
+}
+
+.delete {
+    text-align: right;
+    margin: 8px;
+}
+
+.row {
+    display: flex;
+}
+
+label {
+    margin: 5px;
+}

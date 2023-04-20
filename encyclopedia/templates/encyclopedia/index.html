@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+{% if deleted_title %}
+    <div class="alert alert-success">
+        Successfully deleted "{{ deleted_title }}".
+    </div>
+{% endif %}
+    <h1>All Pages</h1>
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{% url 'encyclopedia:entry' entry %}">{{ entry }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

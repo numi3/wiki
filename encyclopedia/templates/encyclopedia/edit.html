@@ -1,0 +1,29 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit Page | Encyclopedia
+{% endblock %}
+
+{% block body %}
+{% if error_msg %}
+<div class="alert alert-warning" role="alert">
+    Error. Page already exists.
+  </div>
+{% endif %}
+    <h1>Edit Page</h1>
+    <p>
+        <form action="{% url 'encyclopedia:edit' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="original_title" value="{{ original_title }}">
+            <p>
+                <label for="id_title">Entry Title</label><br>
+                {{ edit_form.title }}
+            </p>
+            <p>
+                <label for="id_content">Entry Content</label><br>
+                {{ edit_form.content }}
+            </p>
+            <input type="submit" class="btn btn-primary" value="Apply Changes">
+        </form>
+    </p>
+{% endblock %}

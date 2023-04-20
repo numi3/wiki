@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+
+    {{ entry_title }} | Encyclopedia
+
+{% endblock %}
+
+{% block body %}
+<div class="delete">
+    <form action="{% url 'encyclopedia:delete' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="entry_title" value="{{ entry_title }}">
+        <input class="btn btn-danger" type="submit" value="Delete Page">
+    </form>
+</div>
+{{ entry_content|safe }}
+<div class="edit">
+    <form action="{% url 'encyclopedia:edit' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="entry_title" value="{{ entry_title }}">
+        <input class="btn btn-primary" type="submit" value="Edit Page">
+    </form>
+</div>
+{% endblock %}
